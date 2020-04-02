@@ -2,15 +2,15 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-namespace Version_3_C
+namespace Gallery3WinForm
 {
     public partial class frmArtist : Form
     {
         private clsArtist _Artist;
-        private clsWorksList _WorksList;
+        //private clsWorksList _WorksList;
 
-        private static Dictionary<clsArtist, frmArtist> _ArtistFormList =
-            new Dictionary<clsArtist, frmArtist>();
+        private static Dictionary<string, frmArtist> _ArtistFormList =
+            new Dictionary<string, frmArtist>();
 
         private frmArtist()
         {
@@ -39,7 +39,6 @@ namespace Version_3_C
             }
         }
 
-
         private async void refreshFormFromDB(string prArtistName)
         {
             SetDetails(await ServiceClient.GetArtistAsync(prArtistName));
@@ -53,20 +52,20 @@ namespace Version_3_C
 
         private void UpdateDisplay()
         {
-            if (_WorksList.SortOrder == 0)
-            {
-                _WorksList.SortByName();
-                rbByName.Checked = true;
-            }
-            else
-            {
-                _WorksList.SortByDate();
-                rbByDate.Checked = true;
-            }
+            //if (_WorksList.SortOrder == 0)
+            //{
+            //    _WorksList.SortByName();
+            //    rbByName.Checked = true;
+            //}
+            //else
+            //{
+            //    _WorksList.SortByDate();
+            //    rbByDate.Checked = true;
+            //}
 
-            lstWorks.DataSource = null;
-            lstWorks.DataSource = _WorksList;
-            lblTotal.Text = Convert.ToString(_WorksList.GetTotalValue());
+            //lstWorks.DataSource = null;
+            //lstWorks.DataSource = _WorksList;
+            //lblTotal.Text = Convert.ToString(_WorksList.GetTotalValue());
         }
 
         public void UpdateForm()
@@ -74,7 +73,7 @@ namespace Version_3_C
             txtName.Text = _Artist.Name;
             txtSpeciality.Text = _Artist.Speciality;
             txtPhone.Text = _Artist.Phone;
-            _WorksList = _Artist.WorksList;
+            //_WorksList = _Artist.WorksList;
 
             //frmMain.Instance.GalleryNameChanged += new frmMain.Notify(updateTitle);
             //updateTitle(_Artist.ArtistList.GalleryName);
@@ -87,7 +86,7 @@ namespace Version_3_C
             UpdateForm();
             UpdateDisplay();
             frmMain.Instance.GalleryNameChanged += new frmMain.Notify(updateTitle);
-            updateTitle(_Artist.ArtistList.GalleryName);
+            //updateTitle(_Artist.ArtistList.GalleryName);
             Show();
         }
 
@@ -101,20 +100,20 @@ namespace Version_3_C
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string lcReply = new InputBox(clsWork.FACTORY_PROMPT).Answer;
-            if (!string.IsNullOrEmpty(lcReply))
-            {
-                _WorksList.AddWork(lcReply[0]);
-                UpdateDisplay();
-                frmMain.Instance.UpdateDisplay();
-            }
+            //string lcReply = new InputBox(clsWork.FACTORY_PROMPT).Answer;
+            //if (!string.IsNullOrEmpty(lcReply))
+            //{
+            //    _WorksList.AddWork(lcReply[0]);
+            //    UpdateDisplay();
+            //    frmMain.Instance.UpdateDisplay();
+            //}
         }
 
         private void lstWorks_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                _WorksList.EditWork(lstWorks.SelectedIndex);
+                //_WorksList.EditWork(lstWorks.SelectedIndex);
                 UpdateDisplay();
                 frmMain.Instance.UpdateDisplay();
             }
@@ -130,7 +129,7 @@ namespace Version_3_C
 
             if (lcIndex >= 0 && MessageBox.Show("Are you sure?", "Deleting work", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                _WorksList.RemoveAt(lcIndex);
+                //_WorksList.RemoveAt(lcIndex);
                 UpdateDisplay();
                 frmMain.Instance.UpdateDisplay();
             }
@@ -144,7 +143,7 @@ namespace Version_3_C
                     pushData();
                     if (txtName.Enabled)
                     {
-                        _Artist.NewArtist();
+                        //_Artist.NewArtist();
                         MessageBox.Show("Artist added!", "Success");
                         frmMain.Instance.UpdateDisplay();
                         txtName.Enabled = false;
@@ -159,21 +158,21 @@ namespace Version_3_C
 
         private Boolean isValid()
         {
-            if (txtName.Enabled && txtName.Text != "")
-                if (_Artist.IsDuplicate(txtName.Text))
-                {
-                    MessageBox.Show("Artist with that name already exists!", "Error adding artist");
-                    return false;
-                }
-                else
-                    return true;
-            else
+            //if (txtName.Enabled && txtName.Text != "")
+            //    if (_Artist.IsDuplicate(txtName.Text))
+            //    {
+            //        MessageBox.Show("Artist with that name already exists!", "Error adding artist");
+            //        return false;
+            //    }
+            //    else
+            //        return true;
+            //else
                 return true;
         }
 
         private void rbByDate_CheckedChanged(object sender, EventArgs e)
         {
-            _WorksList.SortOrder = Convert.ToByte(rbByDate.Checked);
+            //_WorksList.SortOrder = Convert.ToByte(rbByDate.Checked);
             UpdateDisplay();
         }
 

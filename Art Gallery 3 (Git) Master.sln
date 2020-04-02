@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gallery3", "Gallery3", "{51
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery3Selfhost", "Galler3Selfhost\Gallery3Selfhost.csproj", "{AB40A984-7B5C-4A75-9116-8E74B90787D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery3WinForm", "Gallery3WinForm\Gallery3WinForm.csproj", "{DF0DE478-8089-432C-B017-D6C5F74646D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,12 +55,29 @@ Global
 		{AB40A984-7B5C-4A75-9116-8E74B90787D7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{AB40A984-7B5C-4A75-9116-8E74B90787D7}.Release|x86.ActiveCfg = Release|Any CPU
 		{AB40A984-7B5C-4A75-9116-8E74B90787D7}.Release|x86.Build.0 = Release|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Debug|ARM.Build.0 = Debug|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Debug|x86.Build.0 = Debug|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Release|ARM.ActiveCfg = Release|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Release|ARM.Build.0 = Release|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF0DE478-8089-432C-B017-D6C5F74646D9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AB40A984-7B5C-4A75-9116-8E74B90787D7} = {512E6EDD-19B4-4292-8D79-78CCC3374BA9}
+		{DF0DE478-8089-432C-B017-D6C5F74646D9} = {512E6EDD-19B4-4292-8D79-78CCC3374BA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7ACEFF87-8EEE-4F48-B3A7-F2B29C7A57E6}
