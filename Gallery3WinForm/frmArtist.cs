@@ -52,6 +52,9 @@ namespace Gallery3WinForm
 
         private void UpdateDisplay()
         {
+            lstWorks.DataSource = null;
+            if (_Artist.WorksList != null)
+                lstWorks.DataSource = _Artist.WorksList;
             //if (_WorksList.SortOrder == 0)
             //{
             //    _WorksList.SortByName();
@@ -114,6 +117,7 @@ namespace Gallery3WinForm
             try
             {
                 //_WorksList.EditWork(lstWorks.SelectedIndex);
+                frmWork.DispatchWorkForm(lstWorks.SelectedValue as clsAllWork);
                 UpdateDisplay();
                 frmMain.Instance.UpdateDisplay();
             }
